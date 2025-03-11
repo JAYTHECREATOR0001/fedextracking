@@ -1,0 +1,94 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FedEx Tracking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #4d148c; /* FedEx Purple */
+            color: white;
+        }
+        .container {
+            background: white;
+            color: black;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #4d148c;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .tracking-result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .progress {
+            width: 75%;
+            height: 20px;
+            background-color: #ff6600; /* FedEx Orange */
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>FedEx Tracking</h1>
+    <div class="container">
+        <p>Enter your tracking number below:</p>
+        <input type="text" id="trackingNumber" placeholder="Enter Tracking Number">
+        <button onclick="trackPackage()">Track</button>
+        <div id="result" class="tracking-result"></div>
+
+        <!-- Fake Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress">Out for Delivery</div>
+        </div>
+
+        <!-- Static Fake Map -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/World_map_blank_without_borders.svg/1200px-World_map_blank_without_borders.svg.png" 
+        alt="Fake Delivery Route" width="100%">
+    </div>
+
+    <script>
+        function trackPackage() {
+            var trackingNumber = document.getElementById("trackingNumber").value;
+            var resultDiv = document.getElementById("result");
+
+            // Fake tracking details
+            var fakeDetails = `
+                <p><strong>Tracking Number:</strong> ${trackingNumber}</p>
+                <p><strong>Recipient:</strong> Farrukh Khan</p>
+                <p><strong>Amount:</strong> £6,500</p>
+                <p><strong>Delivery Date:</strong> Next Tomorrow</p>
+                <p><strong>Status:</strong> Out for Delivery</p>
+            `;
+
+            resultDiv.innerHTML = fakeDetails;
+        }
+    </script>
+</body>
+</html>
