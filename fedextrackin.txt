@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FedEx Cash Tracking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .tracking-result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>FedEx Cash Tracking</h1>
+    <p>Enter your tracking number below:</p>
+    <input type="text" id="trackingNumber" placeholder="Enter Tracking Number">
+    <button onclick="trackPackage()">Track</button>
+    <div id="result" class="tracking-result"></div>
+
+    <script>
+        function trackPackage() {
+            var trackingNumber = document.getElementById("trackingNumber").value;
+            var resultDiv = document.getElementById("result");
+
+            // Fake tracking details for the prank
+            var fakeDetails = `
+                <p><strong>Tracking Number:</strong> ${trackingNumber}</p>
+                <p><strong>Recipient:</strong> Farrukh Khan</p>
+                <p><strong>Amount:</strong> £6,500</p>
+                <p><strong>Delivery Date:</strong> Next Tomorrow</p>
+                <p><strong>Status:</strong> In Transit</p>
+            `;
+
+            resultDiv.innerHTML = fakeDetails;
+        }
+    </script>
+</body>
+</html>
